@@ -20,6 +20,7 @@ public class LoginFragment extends Fragment {
 
     EditText nameTextBox;
     Button loginBtn;
+    TextView textGreeting;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class LoginFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_login,container,false);
         nameTextBox = (EditText) v.findViewById(R.id.nameText);
         loginBtn = v.findViewById(R.id.btn_login);
+        textGreeting = v.findViewById(R.id.textGreeting);
         loginBtn.setEnabled(false);
 
 
@@ -55,6 +57,8 @@ public class LoginFragment extends Fragment {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String name = nameTextBox.getText().toString();
                 loginBtn.setEnabled(!name.isEmpty());
+                String displayGreeting = "Hello " + name + "!";
+                textGreeting.setText(displayGreeting);
             }
 
             @Override

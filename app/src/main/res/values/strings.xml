@@ -2,4 +2,6 @@
     <string name="app_name">StockPal</string>
     <string name="name">Name</string>
     <string name="login">Login</string>
+    <string name="hello">Hello</string>
+    <string name="please_enter_a_name_to_get_started">Please enter a name to get started.</string>
 </resources>
