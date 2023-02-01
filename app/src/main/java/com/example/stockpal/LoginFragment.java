@@ -1,6 +1,8 @@
 package com.example.stockpal;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,13 +35,31 @@ public class LoginFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_login,container,false);
         nameTextBox = (EditText) v.findViewById(R.id.nameText);
         loginBtn = v.findViewById(R.id.btn_login);
+        loginBtn.setEnabled(false);
 
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SayHello(view);
+            }
+        });
+
+        nameTextBox.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String name = nameTextBox.getText().toString();
-                
+                loginBtn.setEnabled(!name.isEmpty());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
@@ -47,16 +67,12 @@ public class LoginFragment extends Fragment {
         return v;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-    }
 
     public void SayHello(View view){
+        String name = nameTextBox.getText().toString();
+        Toast.makeText(getContext(), "Hello " + name, Toast.LENGTH_SHORT).show();
+
 
     }
-
 
 }

@@ -12,10 +12,10 @@
         android:id="@+id/nameText"
         android:layout_width="311dp"
         android:layout_height="69dp"
-        android:autofillHints="name"
+
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/name"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,5 +31,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameText"
+        android:onClick="OnClick" />
 </androidx.constraintlayout.widget.ConstraintLayout>
